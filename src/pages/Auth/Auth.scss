@@ -25,14 +25,24 @@
         letter-spacing: 0.1px;
         color: #ADADAD;
     }
+    &__register-link:hover {
+        color: #7F6ED4;
+    }
     .button {
         text-transform: uppercase;
         font-size: 14px;
         font-weight: 500;
         letter-spacing: 0.1px;
         width: 100%;
-
+        border: none;
+        background: #7F6ED4;
     }
+    .button:hover {
+        background-color: #9185ca;
+    }
+    .input:hover {
+        border-color: #7F6ED4;
+      }
     .block {
         width: 430px;
     }

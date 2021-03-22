@@ -1,14 +1,15 @@
 import React from "react";
-import { Router } from "react-router-dom";
+import { Route } from "react-router-dom";
 
-import { LoginForm } from "../../modules";
+import { LoginForm, RegisterForm } from "../../modules";
 
 import "./Auth.scss";
 
 const Auth = () => (
   <section className="auth">
     <div className="auth__content">
-        <LoginForm />
+      <Route exact path="/signin" component={LoginForm} />
+      <Route exact path="/signup" component={RegisterForm} />
     </div>
   </section>
 );
