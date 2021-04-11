@@ -11,7 +11,19 @@ import {
 
 import { Button, Block } from "../../../components";
 
+const success = false;
+
 const RegisterForm = props => {
+  const {
+    values,
+    touched,
+    errors,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isValid,
+    isSubmitting
+  } = props;
   return (
     <div>
       <div className="auth__top">
@@ -19,25 +31,31 @@ const RegisterForm = props => {
         <p>Please, sign up to enter chat</p>
       </div>
       <Block>
-        <Form className="register-form">
-          <Form.Item>
-            <Input className="input"
+        {!success ? (
+        <Form onSubmit={handleSubmit} className="register-form">
+          <Form.Item
+              hasFeedback
+            >
+            <Input
               id="email"
               prefix={<MailOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               size="large"
               placeholder="E-Mail"
+              onChange={handleChange}
+              onBlur={handleBlur}
             />
           </Form.Item>
-          <Form.Item>
-            <Input className="input"
-              id="email"
+          <Form.Item validateStatus="success">
+            <Input
+              id="username"
               prefix={<UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               size="large"
               placeholder="Username"
             />
           </Form.Item>
-          <Form.Item>
-            <Input className="input"
+          <Form.Item 
+          hasFeedback>
+            <Input 
               id="password"
               prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               size="large"
@@ -55,7 +73,7 @@ const RegisterForm = props => {
             />
           </Form.Item>
           <Form.Item>
-            <Button
+            <Button onClick={handleSubmit}
               type="primary"
               size="large"
             >
@@ -67,7 +85,17 @@ const RegisterForm = props => {
                 Log in
               </Link>
           </Form.Item>
-        </Form>
+        </Form>): (
+          <div className="auth__success-block">
+            <div>
+              <InfoCircleTwoTone style={{ color: "rgba(0,0,0,.25)" }} />
+            </div>
+            <h2>Confirm your account</h2>
+            <p>
+              An email has been sent to your email with a link to confirm your account.
+            </p>
+          </div>
+        )}
       </Block>
     </div>
   );
