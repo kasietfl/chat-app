@@ -60,9 +60,17 @@
     .button:hover {
         background-color: #9185ca;
     }
-    .input:hover {
-        border-color: #7F6ED4;
+    .ant-input-affix-wrapper-lg {
+        
+        &:hover, &:active, &:focus, &:visited {
+            border-color: #7F6ED4;
+            box-shadow: none;
+        }
     }
+    .ant-input-affix-wrapper-lg::after
+        {
+            background-color: yellow;
+        }
     .block {
         width: 430px;
     }

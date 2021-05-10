@@ -10,6 +10,7 @@
         width: 320px;
         border-right: 1px solid #f1f1f1;
         &-header {
+            align-items: center;
             display: flex;
             justify-content: space-between;
             padding: 20px;
@@ -30,21 +31,9 @@
                 }
             }
         }
-        &-search {
-            padding: 0 20px 20px 20px;
-            .ant-input{
-                background-color: #f1f1f1;
-                &:focus, &:hover {
-                    box-shadow: none;
-                    border-color: #b2a9df;
-                  }
-                &-affix-wrapper {
-                    background-color: #f1f1f1;
-                }
-            }
-        }
+        
         &-dialogs {
-            height: calc(100% - 135px);
+            height: calc(100% - 165px);
             .dialog {
                 height: 100%;
                 overflow: auto;
@@ -53,8 +42,14 @@
                     margin-bottom: 0;
                     cursor: pointer;
 
-                    &.active, &:hover {
-                        background-color: #f7f3ff;
+                    &:hover {
+                        background-color: #f3f7ff;
+                    }
+
+                    &--selected, 
+                    &--selected:hover {
+                        background-color: #7E6CD0;
+                        color: #fff !important;
                     }
                 }
             }
@@ -63,6 +58,13 @@
     }
     &__dialog {
         flex: 1;
+        position: relative;
+        .ant-empty {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
         &-header {
             display: flex;
             justify-content: space-between;
@@ -95,8 +97,9 @@
         }
         &-messages {
             padding: 20px;
+            padding-bottom: 0;
             overflow: auto;
-            height: calc(100% - 56px);
+            height: calc(100% - 138px);
         }
     }
 }

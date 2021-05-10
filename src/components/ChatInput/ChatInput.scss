@@ -1,4 +1,5 @@
 .chat-input {
+    display: flex;
     margin: 20px;
     position: relative;
   
@@ -7,12 +8,13 @@
     }
   
     &__smile-btn {
-      margin-right: 15px;
+      margin-top: 7px;
+      margin-right: 12px;
     }
   
     .anticon {
         cursor: pointer;
-        font-size: 20px;
+        font-size: 24px;
     }
   
     &__emoji-picker {
@@ -21,35 +23,29 @@
       z-index: 1;
     }
   
-    &__attachments {
-      padding-top: 10px;
-      padding-left: 47px;
-    }
-  
     &__actions {
       display: flex;
       align-items: center;
-      width: 80px;
+      width: 70px;
       justify-content: space-between;
-      margin-left: 15px;
-  
+      margin-left: 10px;
+
       &-upload-btn {
-        cursor: pointer;
-        input {
+        font-size: 24px;
+        .anticon {
           cursor: pointer;
-        }
-        &:hover {
-          button {
+          &:hover {
             opacity: 1;
           }
-        }
+        } 
       }
     }
   
     .ant-input {
-      padding: 6px 11px 8px;
+      padding: 6px 20px 8px;
       font-size: 14px;
       &:focus, &:hover {
+        cursor:text;
         box-shadow: none;
         border-color: #b2a9df;
       }

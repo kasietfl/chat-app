@@ -3,17 +3,16 @@ export default ({ isAuth, values, errors }) => {
       email: (errors, value) => {
         if (!value) {
             errors.email = "E-Mail is required";
-          } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+          } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)){
             errors.email = "Invalid email address";
           }
       },
       password: (errors, value) => {
         if (!value) {
           errors.password = "Password is required";
-        } else if ( !isAuth &&
-          !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(value)
+        } else if ( !isAuth && !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(value)
         ) {
-          errors.password = "Passowrd must be stronger";
+          errors.password = "Password must be stronger";
         }
       }
     };

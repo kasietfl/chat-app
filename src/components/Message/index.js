@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { Time, IconRead } from '../';
+import { Time, IconRead, Avatar } from '../';
 
 import './Message.scss';
 
@@ -25,7 +25,7 @@ const Message = ({
             <div className="message__content">
                 <IconRead isMe={isMe} isRead={isRead} />
                 <div className="message__avatar">
-                    <img src={avatar} alt={`Avatar ${user.fullname}`}/>
+                    <Avatar user={user}/>
                 </div>
                 <div className="message__info">
                     {(text || isTyping) && (

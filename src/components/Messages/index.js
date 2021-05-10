@@ -7,65 +7,14 @@ import { Message } from "../";
 const Messages = ({ items }) => {
   return items ? (
     <div>
-      <Message
-        avatar="https://sun1-89.userapi.com/c850424/v850424867/f6869/B-F_i2BilOA.jpg?ava=1"
-        text="Hello, World!"
-        date="Sun Apr 21 2019 21:59:29"
-        isMe={true}
-        isRead={false}
-      />
-      <Message
-        avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-        attachments={[
-          {
-            filename: "image.jpg",
-            url: "https://source.unsplash.com/100x100/?random=1&nature,water"
-          }
-        ]}
-      />
-      <Message
-        avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-        text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
-        date="Sun Apr 21 2019 21:55:29"
-      />
-      <Message
-        avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-        text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
-        date="Sun Apr 21 2019 21:55:29"
-      />
-      <Message
-        avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-        text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
-        date="Sun Apr 21 2019 21:55:29"
-      />
-      <Message
-        avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-        text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
-        date="Sun Apr 21 2019 21:55:29"
-      />
-      <Message
-        avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-        text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
-        date="Sun Apr 21 2019 21:55:29"
-      />
-      <Message
-        avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-        text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
-        date="Sun Apr 21 2019 21:55:29"
-      />
-      <Message
-        avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-        text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
-        date="Sun Apr 21 2019 21:55:29"
-      />
-      <Message
-        avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-        text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
-        date="Sun Apr 21 2019 21:55:29"
-      />
+      {items.length > 0 ? (items.map(item => (
+        <Message key={item._id} {...item} />
+      ))): (
+        <Empty description="No messages" style={{"opacity":0.4}} />
+      )}
     </div>
   ) : (
-    <Empty description="Start dialog" />
+    <Empty description="Start dialog" style={{"opacity":0.4}} />
   );
 };
 
