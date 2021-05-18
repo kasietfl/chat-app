@@ -102,4 +102,16 @@
             height: calc(100% - 138px);
         }
     }
+    .anticon {
+        color: #202020 !important;
+        opacity: 0.4;
+      
+        &:hover {
+          opacity: 1;
+        }
+      
+        &:after {
+          display: none;
+        }
+      }
 }
